@@ -1,0 +1,103 @@
+{
+  "selectors": {
+    "stories": {
+      "container": "._aamw",
+      "storyItem": "._aagv",
+      "storyImage": "._aagw img",
+      "storyVideo": "._aagw video",
+      "viewOnceIndicator": "._ab8w"
+    },
+    "posts": {
+      "container": "article._aagv",
+      "mediaContainer": "._aagv",
+      "image": "._aagv img",
+      "video": "._aagv video",
+      "carousel": "._aamh",
+      "carouselItem": "._aamd"
+    },
+    "reels": {
+      "container": "._aagw",
+      "video": "._aagw video",
+      "audioTrack": "._aap5",
+      "description": "._aacl"
+    },
+    "highlights": {
+      "container": "._aafz",
+      "item": "._aafy",
+      "media": "._aagw"
+    },
+    "navigation": {
+      "header": "header._aak6",
+      "rightActions": "._aak6 > div > div:last-child",
+      "profileSection": "._aa_h"
+    },
+    "modals": {
+      "storyViewer": "._ac0l",
+      "postViewer": "._aatk",
+      "reelViewer": "._aatk"
+    },
+    "buttons": {
+      "next": "._aahi",
+      "previous": "._aahh",
+      "close": "._aaxy"
+    },
+    "metadata": {
+      "username": "._aacl._aacs._aact._aacx._aada",
+      "timestamp": "time._aaqe",
+      "caption": "._aacl._aaco._aacu._aacx._aad7._aade"
+    },
+    "viewOnce": {
+      "container": "._ab8w",
+      "mediaContainer": "._aagw",
+      "timer": "._ab8x"
+    },
+    "privateAccount": {
+      "indicator": "._aa_h"
+    }
+  },
+  "attributes": {
+    "mediaUrl": "src",
+    "videoUrl": "src",
+    "timestamp": "datetime",
+    "alt": "alt"
+  },
+  "classNames": {
+    "downloadButton": "ghostgram-download-btn",
+    "audioButton": "ghostgram-audio-btn",
+    "settingsButton": "ghostgram-settings-btn",
+    "settingsPanel": "ghostgram-settings-panel",
+    "errorMessage": "ghostgram-error"
+  },
+  "dataAttributes": {
+    "theme": "data-theme",
+    "mediaType": "data-media-type",
+    "isPrivate": "data-is-private"
+  },
+  "version": "1.0.0",
+  "lastUpdated": "2024-01-20",
+  "notes": [
+    "These selectors are based on Instagram's web app DOM structure as of January 2024",
+    "Update this file when Instagram changes their class names or DOM structure",
+    "Use MutationObserver fallbacks in content_script.js when selectors fail"
+  ],
+  "selectorPriority": {
+    "stories": ["container", "storyItem", "storyImage", "storyVideo"],
+    "posts": ["container", "mediaContainer", "image", "video", "carousel"],
+    "reels": ["container", "video", "audioTrack"],
+    "highlights": ["container", "item", "media"]
+  },
+  "fallbackSelectors": {
+    "stories": {
+      "container": ["._aamw", "div[role='menu']"],
+      "media": ["img", "video"]
+    },
+    "posts": {
+      "container": ["article", "._aagv"],
+      "media": ["img[srcset]", "video[src]"]
+    },
+    "reels": {
+      "container": ["._aagw", "div[role='presentation']"],
+      "video": ["video"]
+    }
+  }
+}
