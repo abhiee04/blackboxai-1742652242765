@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="64" cy="64" r="60" fill="#0095f6"/>
+  
+  <!-- Letter G -->
+  <path d="M80 64h-16v-8h24v24a32 32 0 1 1-32-32v8a24 24 0 1 0 24 24v-16z" 
+        fill="white" 
+        stroke="white" 
+        stroke-width="2"/>
+        
+  <!-- Ghost silhouette -->
+  <path d="M64 40c-13.255 0-24 10.745-24 24v24c0 6.627 5.373 12 12 12h24c6.627 0 12-5.373 12-12V64c0-13.255-10.745-24-24-24z" 
+        fill="white" 
+        fill-opacity="0.2"/>
+</svg>
