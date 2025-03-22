@@ -1,0 +1,252 @@
+/* GhostGram Styles */
+
+/* Base Variables */
+:root {
+  --ghostgram-primary: #0095f6;
+  --ghostgram-secondary: #262626;
+  --ghostgram-background: #ffffff;
+  --ghostgram-text: #262626;
+  --ghostgram-border: #dbdbdb;
+  --ghostgram-shadow: rgba(0, 0, 0, 0.1);
+  --ghostgram-danger: #ed4956;
+  --ghostgram-success: #2ecc71;
+  --ghostgram-overlay: rgba(0, 0, 0, 0.5);
+  --ghostgram-radius: 8px;
+  --ghostgram-transition: all 0.2s ease;
+}
+
+/* Dark Mode Variables */
+[data-theme="dark"] {
+  --ghostgram-background: #000000;
+  --ghostgram-text: #ffffff;
+  --ghostgram-secondary: #8e8e8e;
+  --ghostgram-border: #363636;
+  --ghostgram-shadow: rgba(255, 255, 255, 0.1);
+}
+
+/* Download Button */
+.ghostgram-download-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--ghostgram-transition);
+  z-index: 999;
+  box-shadow: 0 2px 8px var(--ghostgram-shadow);
+  opacity: 0;
+}
+
+/* Show download button on hover */
+*:hover > .ghostgram-download-btn {
+  opacity: 1;
+}
+
+.ghostgram-download-btn:hover {
+  transform: scale(1.1);
+  background: var(--ghostgram-primary);
+  color: white;
+}
+
+/* Settings Button */
+.ghostgram-settings-btn {
+  background: transparent;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 20px;
+  color: var(--ghostgram-text);
+  transition: var(--ghostgram-transition);
+  margin-left: 15px;
+}
+
+.ghostgram-settings-btn:hover {
+  transform: rotate(30deg);
+}
+
+/* Settings Panel */
+.ghostgram-settings-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--ghostgram-overlay);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  animation: fadeIn 0.2s ease forwards;
+}
+
+.ghostgram-settings-content {
+  background: var(--ghostgram-background);
+  border-radius: var(--ghostgram-radius);
+  padding: 24px;
+  width: 90%;
+  max-width: 400px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 12px var(--ghostgram-shadow);
+}
+
+/* Settings Groups */
+.setting-group {
+  margin: 20px 0;
+}
+
+.setting-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--ghostgram-text);
+  font-weight: 600;
+}
+
+.setting-group select,
+.setting-group input[type="checkbox"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--ghostgram-border);
+  border-radius: var(--ghostgram-radius);
+  background: var(--ghostgram-background);
+  color: var(--ghostgram-text);
+  transition: var(--ghostgram-transition);
+}
+
+.setting-group select:focus,
+.setting-group input[type="checkbox"]:focus {
+  border-color: var(--ghostgram-primary);
+  outline: none;
+}
+
+/* Warning Banner */
+.warning-banner {
+  margin-top: 24px;
+  padding: 12px;
+  background: var(--ghostgram-danger);
+  color: white;
+  border-radius: var(--ghostgram-radius);
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Error Messages */
+.ghostgram-error {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--ghostgram-danger);
+  color: white;
+  padding: 12px 24px;
+  border-radius: var(--ghostgram-radius);
+  z-index: 9999;
+  animation: slideUp 0.3s ease;
+}
+
+/* Audio Button */
+.ghostgram-audio-btn {
+  position: absolute;
+  top: 56px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--ghostgram-transition);
+  z-index: 999;
+  box-shadow: 0 2px 8px var(--ghostgram-shadow);
+  opacity: 0;
+}
+
+*:hover > .ghostgram-audio-btn {
+  opacity: 1;
+}
+
+.ghostgram-audio-btn:hover {
+  transform: scale(1.1);
+  background: var(--ghostgram-primary);
+  color: white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translate(-50%, 100%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+/* Theme-specific styles */
+[data-theme="ios"] {
+  --ghostgram-radius: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+[data-theme="android"] {
+  --ghostgram-radius: 4px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+[data-theme="windows"] {
+  --ghostgram-radius: 2px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .ghostgram-settings-content {
+    width: 95%;
+    max-height: 90vh;
+    margin: 20px;
+  }
+
+  .ghostgram-download-btn,
+  .ghostgram-audio-btn {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* Accessibility */
+.ghostgram-download-btn:focus,
+.ghostgram-audio-btn:focus,
+.ghostgram-settings-btn:focus {
+  outline: 2px solid var(--ghostgram-primary);
+  outline-offset: 2px;
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  :root {
+    --ghostgram-primary: #0000ff;
+    --ghostgram-danger: #ff0000;
+    --ghostgram-success: #008000;
+  }
+}
